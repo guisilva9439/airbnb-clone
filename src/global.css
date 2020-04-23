@@ -11,6 +11,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
+    color: #333;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
 }
@@ -32,9 +33,4 @@ ul {
 a {
     text-decoration: none;
     color: #000;
-}
-
-.container {
-    width: 88.5%;
-    margin: 0 auto;
 }
