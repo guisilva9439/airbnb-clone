@@ -16,10 +16,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-input, textare, button {
+input, textarea, button {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 button {
@@ -33,4 +33,9 @@ ul {
 a {
     text-decoration: none;
     color: #000;
+}
+
+.container {
+    width: 88.5%;
+    margin: 28px auto;
 }
