@@ -1,0 +1,148 @@
+section.searchbar {
+    margin-top: 110px;
+    margin-bottom: 65px;
+}
+
+.searchbar .search-options {
+    display: flex;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.searchbar .search-options li {
+    margin-right: 23px;
+    font-size: 16px;
+    cursor: pointer;
+    padding-right: 2px;
+}
+
+.searchbar .search-options li.active {
+    cursor: default;
+}
+
+.searchbar .search-options li:not([ class='active' ]):hover {
+    color: #777;
+}
+
+.searchbar .search-options span {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 2px;
+    width: 130px;
+    background-color: #223;
+    transition: .15s all ease;
+    transition-delay: .1s;
+}
+
+.searchbar .inline-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 5px #00000015;
+    border-radius: 10px;
+}
+
+.searchbar .inline-form label {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border: 1.5px solid transparent;
+    transition: border .2s ease;
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+}
+
+.searchbar .inline-form label.focused {
+    border: 1.5px solid #000;
+    background-color: #aaa1;
+}
+
+.searchbar .inline-form label.focused:hover {
+    background-color: #aaa2;
+}
+
+.searchbar .inline-form label:not(:last-of-type):after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    width: 1px;
+    height: 70%;
+    background-color: #ddd;
+    z-index: -1;
+}
+
+.searchbar .inline-form label:not([ class='focused' ]):hover {
+    border: 1.5px solid #ddd;
+}
+
+.searchbar .inline-form label input {
+    font-weight: 500;
+    color: #333;
+    border: none;
+    background-color: transparent;
+    margin-top: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.searchbar .inline-form label input::placeholder {
+    font-weight: 400;
+}
+
+.searchbar .inline-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(to right, rgb(250, 43, 81), rgb(192, 2, 91));
+    padding: 14px 22px;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .1s all ease;
+}
+
+.searchbar .inline-form button:active {
+    padding: 12px 20px;
+    margin: 0 12px;
+    background: linear-gradient(to right, rgb(250, 43, 81), rgb(250, 43, 81));
+}
+
+.searchbar .inline-form button svg {
+    margin-right: 8px;
+    z-index: 1;
+}
+
+.searchbar .inline-form button span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 97, 97);
+    box-shadow: 0 0 20px 30px rgb(255, 97, 97);
+    opacity: 0;
+    transition: .8s opacity ease;
+}
+
+.searchbar .inline-form button:hover span {
+    opacity: 50%;
+}
+
+.searchbar .inline-form button p {
+    z-index: 1;
+}

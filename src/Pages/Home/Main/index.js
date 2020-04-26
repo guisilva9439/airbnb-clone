@@ -1,97 +1,50 @@
 // Node Modules imports
 import React from 'react';
-import { FaSearch } from 'react-icons/fa';
 
 // Local imports
+import SearchBar from './SearchBar';
 import './style.css';
+import experienceImg from '../../../assets/experience.webp';
+import staysImg from '../../../assets/stays.webp';
+import infoImg from '../../../assets/info.webp';
 
 function Main() {
-    function handleClick(e) {
-        const listItems = document.querySelectorAll('main .searchbar .search-options li');
-        const paddle = document.querySelector('main .searchbar .search-options span');
-        const container = document.querySelector('main.container');
-
-        const containerRect = container.getBoundingClientRect();
-        const targetRect = e.target.getBoundingClientRect();
-
-        for (const item of listItems) {
-            item.className = '';
-        }
-
-        e.target.className = 'active';
-
-        paddle.style.left = `${ targetRect.left - containerRect.left }px`;
-        paddle.style.width = `${ targetRect.width }px`;
-    }
-
-    function handleMouseMove(e) {
-        const effect = document.querySelector('main .searchbar .inline-form button span ');
-        const button = document.querySelector('main .searchbar .inline-form button');
-
-        const buttonRect = button.getBoundingClientRect();
-
-        effect.style.top = `${ e.clientY - (buttonRect.top + 10) }px`;
-        effect.style.left = `${ e.clientX - (buttonRect.left + 10) }px`;
-    }
-
-    function handleFocus(e) {
-        e.target.parentElement.className = 'focused';
-    }
-
-    function handleBlur(e) {
-        e.target.parentElement.className = '';
-    }
-
     return (
-        <main className='container'>
-            <section className='searchbar'>
-                <ul className='search-options'>
-                    <li className='active'
-                        onClick={ handleClick }
-                    >
-                        Lugares para ficar
-                    </li>
-                    <li onClick={ handleClick }>
-                        Estadias longas
-                    </li>
-                    <li onClick={ handleClick }>
-                        Experiências
-                    </li>
-                    <span></span>
-                </ul>
+        <main className="container">
+           <SearchBar />
 
-                <form className='inline-form'>
-                    <label 
-                        onFocus={ handleFocus }
-                        onBlur={ handleBlur }
-                    >
-                        Localização
-                        <input placeholder='Insira a cidade, ponto de referência ou endereço' />
-                    </label>
-                    <label
-                        onFocus={ handleFocus }
-                        onBlur={ handleBlur }
-                    >
-                        Check-in/Checkout
-                        <input placeholder='Insira as datas' />
-                    </label>
-                    <label
-                        onFocus={ handleFocus }
-                        onBlur={ handleBlur }
-                    >
-                        Hóspedes
-                        <input placeholder='Insira o número de hóspedes' />
-                    </label>
-                    <button
-                        type="submit"
-                        onMouseMove={ handleMouseMove }
-                    >
-                        <span></span>
-                        <FaSearch color='#fff' size={ 13 } />
-                        <p>Buscar</p>
-                    </button>
-                </form>
-            </section>
+           <section class='highlights'>
+                <h1>Podemos estar afastados, mas vamos superar isso juntos.</h1>
+
+                <div className="highlights-content">
+                    <a href='/' className="highlight-item">
+                        <img src={ experienceImg } alt="Experiencia online" />
+                        <div className="detail">
+                            <h2>Experiências Online</h2>
+                            <p>Atividades únicas que podemos fazer juntos, oferecidas por anfitriões de todo o mundo.</p>
+                        </div>
+                    </a>
+                    <a href='/' className="highlight-item">
+                        <img src={ staysImg } alt="Estadias longas" />
+                        <div className="detail">
+                            <h2>Estadias longas</h2>
+                            <p>Sinta-se em casa no airbnb com estadias de um mês ou mais.</p>
+                        </div>
+                    </a>
+                    <a href='/' className="highlight-item">
+                        <img src={ infoImg } alt="Informações atualizadas" />
+                        <div className="detail">
+                            <h2>Informações atualizadas</h2>
+                            <p>Saiba mais sobre as ações que estamos tomando em relação à COVID-19</p>
+                        </div>
+                    </a>
+                </div>
+           </section>
+
+           <p>aaa</p>
+           <p>aaa</p>
+           <p>aaa</p>
+           <p>aaa</p>
         </main>
     );
 }

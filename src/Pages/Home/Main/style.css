@@ -1,132 +1,55 @@
-main .searchbar .search-options {
+.highlights h1 {
+    font-size: 45px;
+    letter-spacing: 1px;
+    width: 60%;
+    font-weight: 400;
+    background: linear-gradient(to right, rgb(139, 0, 76), 
+        rgb(255, 0, 140));
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 50px;
+}
+
+.highlights .highlights-content {
     display: flex;
-    position: relative;
-    margin-bottom: 25px;
-}
-
-main .searchbar .search-options li {
-    margin-right: 23px;
-    font-size: 16px;
-    cursor: pointer;
-    padding-right: 2px;
-}
-
-main .searchbar .search-options li.active {
-    cursor: default;
-}
-
-main .searchbar .search-options li:not([ class='active' ]):hover {
-    color: #777;
-}
-
-main .searchbar .search-options span {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    height: 2px;
-    width: 130px;
-    background-color: #223;
-    transition: .15s all ease;
-    transition-delay: .1s;
-}
-
-main .searchbar .inline-form {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    border: 1px solid #eee;
-    box-shadow: 0 3px 5px #00000015;
-    border-radius: 10px;
 }
 
-main .searchbar .inline-form label {
+.highlights .highlights-content .highlight-item {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 10px;
-    text-transform: uppercase;
-    padding: 15px 20px;
-    border: 1.5px solid transparent;
-    transition: border .2s ease;
     border-radius: 10px;
-    position: relative;
-    justify-content: center;
-}
-
-main .searchbar .inline-form label.focused {
-    border: 1.5px solid #000;
-    background-color: #aaa1;
-}
-
-main .searchbar .inline-form label.focused:hover {
-    background-color: #aaa2;
-}
-
-main .searchbar .inline-form label:not(:last-of-type):after {
-    content: '';
-    position: absolute;
-    right: -1px;
-    width: 1px;
-    height: 70%;
-    background-color: #ddd;
-    z-index: -1;
-}
-
-main .searchbar .inline-form label:not([ class='focused' ]):hover {
-    border: 1.5px solid #ddd;
-}
-
-main .searchbar .inline-form label input {
-    font-weight: 500;
-    color: #333;
-    border: none;
-    background-color: transparent;
-    margin-top: 5px;
-}
-
-main .searchbar .inline-form label input::placeholder {
-    font-weight: 400;
-}
-
-main .searchbar .inline-form button {
-    display: flex;
+    overflow: hidden;
+    flex: 1;
+    box-shadow: 0 3px 5px #aaa6;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(to right, #FF385C, #D70466);
-    padding: 15px 25px;
-    margin: 0 13px;
-    position: relative;
-    overflow: hidden;
 }
 
-main .searchbar .inline-form button svg {
-    margin-right: 8px;
-    z-index: 1;
+.highlights .highlights-content .highlight-item:not(:last-child) {
+    margin-right: 20px;
 }
 
-main .searchbar .inline-form button span {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(255, 97, 97);
-    box-shadow: 0 0 20px 30px rgb(255, 97, 97);
-    opacity: 0;
-    transition: .8s opacity ease;
+.highlights .highlights-content .highlight-item .detail {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
 }
 
-main .searchbar .inline-form button:hover span {
-    opacity: 50%;
+.highlights .highlights-content .highlight-item img {
+    width: 100%;
+    height: 100%;
 }
 
-main .searchbar .inline-form button p {
-    z-index: 1;
+.highlights .highlights-content .highlight-item .detail h2 {
+    align-self: flex-start;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.highlights .highlights-content .highlight-item .detail p {
+    width: 90%;
+    color: #777;
 }

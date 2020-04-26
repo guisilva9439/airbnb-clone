@@ -1,6 +1,7 @@
 // Node Modules imports
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiGlobe, FiChevronDown } from 'react-icons/fi';
+import { FaSearch } from 'react-icons/fa';
 
 // Local imports
 import './style.css';
@@ -13,8 +14,12 @@ function handleClick() {
 }
 
 function Header() {
+    const [searchBar, setSearchBar] = useState(false)
+
     useEffect(() => {
         document.addEventListener('scroll', () => {
+            window.scrollY > 140 ? setSearchBar(true) : setSearchBar(false);
+
             if (window.scrollY >= 10) {
                 document.querySelector('header')
                     .classList.add('fixed');
@@ -31,7 +36,19 @@ function Header() {
                 <a href='/' className='logo'>
                     <img src={ logoImg } alt="logo Airbnb" width={ 100 } />
                 </a>
-
+                {
+                    searchBar &&
+                    <form className='searchbar'>
+                        <input placeholder='Insira o destino' />
+                        <input placeholder='Insira as datas' />
+                        <input placeholder='Insira o número de hóspedes' />
+                        <button
+                            type="submit"
+                        >
+                            <FaSearch color='#f22' size={ 15 } />
+                        </button>
+                    </form>
+                }
                 <ul className='navbar'>
                     <li className='dropdown'>
                         <button 
@@ -59,18 +76,31 @@ function Header() {
                             </a>
                         </div>
                     </li>
-                    <li>
-                        <a href='/'>Hospede em sua acomodação</a>
-                    </li>
-                    <li>
-                        <a href='/'>Hospede uma experiência</a>
-                    </li>
-                    <li>
-                        <a href='/'>Ajuda</a>
-                    </li>
-                    <li>
-                        <a href='/'>Entrar</a>
-                    </li>
+                    {
+                        searchBar ? 
+                        (
+                            <>
+                                <li>
+                                    <a href='/'>Ajuda</a>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li>
+                                    <a href='/'>Hospede em sua acomodação</a>
+                                </li>
+                                <li>
+                                    <a href='/'>Hospede uma experiência</a>
+                                </li>
+                                <li>
+                                    <a href='/'>Ajuda</a>
+                                </li>
+                                <li>
+                                    <a href='/'>Entrar</a>
+                                </li>
+                            </>
+                        )
+                    }
                     <li className='signup'>
                         <a href='/'>Cadastrar-se</a>
                     </li>
