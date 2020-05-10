@@ -30,10 +30,6 @@ header .logo {
     transition: .1s border ease;
 }
 
-header .logo:focus {
-    border-color: #000;
-}
-
 /* --- Navbar --- */
 header .navbar {
     display: flex;
@@ -78,11 +74,6 @@ header .navbar li a {
     padding: 13px 10px;
     border: 1.5px solid transparent;
     transition: .1s border ease;
-}
-
-header .navbar li a:focus,
-header .navbar .dropdown .dropdown-toggler:focus {
-    border-color: #000;
 }
 
 header .navbar > li > a {
@@ -159,11 +150,6 @@ header .navbar .signup a {
     padding: 12px 17px;
     box-shadow: 0 1.5px 3px #0002;
     transition: .1s all ease;
-}
-
-header .navbar .signup a:focus {
-    border-width: 1.5px;
-    padding: 11px 16px;
 }
 
 header .navbar .signup a:hover {

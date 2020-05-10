@@ -1,0 +1,86 @@
+footer .footer-grid {
+    padding: 35px 0;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid #ddf;
+    padding-bottom: 30px;
+}
+
+footer .footer-grid .footer-item h3 {
+    font-weight: 500;
+    color: #000;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+footer .footer-grid .footer-item h3,
+footer .footer-grid .footer-item ul li {
+    margin: 20px 0;
+}
+
+footer .footer-grid .footer-item ul li a:hover {
+    text-decoration: underline solid #000;
+}
+
+footer .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+}
+
+footer .footer-flex .left p {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer .footer-flex .left a {
+    margin: 10px;
+    position: relative;
+}
+
+footer .footer-flex .left a::before {
+    content: '.';
+    position: absolute;
+    left: -12px;
+    bottom: 4px;
+}
+
+footer .footer-flex .left a:hover {
+    text-decoration: underline solid #333;
+}
+
+footer .footer-flex .right {
+    display: flex;
+}
+
+footer .footer-flex .right .lang {
+    display: flex;
+}
+
+footer .footer-flex .right .lang a {
+    display: flex;
+    align-items: center;
+    text-decoration: underline solid #333;
+}
+
+footer .footer-flex .right .lang a:first-child {
+    margin-right: 25px;
+}
+
+footer .footer-flex .right .lang a:hover {
+    color: #555;
+}
+
+footer .footer-flex .right .lang a svg,
+footer .footer-flex .right .lang a img {
+    margin-right: 10px;
+}
+
+footer .footer-flex .right .social {
+    margin-left: 35px;
+}
+
+footer .footer-flex .right .social a svg {
+    margin-left: 25px;
+}
